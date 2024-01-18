@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./word8000.js"></script>
+    <title>Document</title>
+    <style>
+        .word-list{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .word-list td{
+            border: 1px solid #ccc;
+        }
+        .word-list tr td.word{
+            font-size: 40px;
+            font-weight: 300;
+            padding-left: 10px;
+            letter-spacing: .5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Words 8000</h1>
+    <table id="wordList" class="word-list">
+
+    </table>
+    <script>
+        // console.log(words);
+        let wordList = document.getElementById('wordList');
+        for(let i = 0; i < words.length; i++){
+            let li = document.createElement('tr');
+            // let word = words[i];
+            let liWord = document.createElement('td');
+            liWord.innerHTML = words[i].en;
+            liWord.classList.add('word'); // Add your desired class name here
+            li.appendChild(liWord);
+            
+            liWord = document.createElement('td');
+            liWord.innerHTML = words[i].ph;
+            liWord.classList.add('phonetic'); // Add your desired class name here
+            li.appendChild(liWord);
+            liWord = document.createElement('td');
+            liWord.innerHTML = words[i].type;
+            liWord.classList.add('type'); // Add your desired class name here
+            li.appendChild(liWord);
+            
+            liWord = document.createElement('td');
+            liWord.innerHTML = words[i].cn;
+            liWord.classList.add('cn'); // Add your desired class name here
+            li.appendChild(liWord);
+            // li.innerHTML = JSON.stringify(words[i]);
+            wordList.appendChild(li);
+        }   
+    </script>
+
+    
+</body>
+</html>

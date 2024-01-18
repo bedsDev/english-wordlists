@@ -2156,7 +2156,7 @@ extinction [iks'tiŋkʃən] n.熄灭；消灭
 extinguish [iks'tiŋɡwiʃ] v.使„熄灭；使„不复存在
 extirpation [,ekstə'peiʃn] n.根除，铲除（某实物或现象）
 extol [iks'tɔl] v.赞美
-extort [iks'tɔ:t]v,强索，敲诈v.强索，敲诈(钱)
+extort [iks'tɔ:t]v.强索，敲诈v.强索，敲诈(钱)
 extract [iks'trækt, 'ekstrækt] v.拔出；强索(钱或信息)
 extraneous [eks'treinjəs] a.来自外部的；无关的
 extrapolate [eks'træpəleit] v.由已知事实预测，推测；(数)由已知值推出未知量
@@ -6290,8 +6290,7 @@ bibulous ['bibjuləs] a. 高度吸收的; 嗜酒的
 biennial [bai'eniəl] a. 两年一次的
 bilious ['biljəs] a. 胆汁质的；坏脾气的
 billow ['biləu] n. 巨浪;v. 翻腾
-blackball ['blækbɔ:l]
-v. 投反对票以阻止
+blackball ['blækbɔ:l] v. 投反对票以阻止
 blackmail ['blækmeil] v./n. 敲诈，勒索
 blare [bleə] v. 高声鸣叫
 blasé ['blɑ:zei] a. 厌倦享乐的，冷漠的
