@@ -25,7 +25,8 @@ rl.on("line", (line) => {
         cn
     }
     console.log(item);
-    const rowStr = `${en},${ph},${type},${cn},[${en}](http://www.wordcyclopedia.com/english?${en})\n`;
+    const rowStr = `${en},${ph},${type},${cn}\n`;
+    // const rowStr = `${en},${ph},${type},${cn},[${en}](http://www.wordcyclopedia.com/english?${en})\n`;
     // Write the item object to the output file
     outputStream.write(rowStr);
 });
