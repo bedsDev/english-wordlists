@@ -7756,10 +7756,14 @@ words.sort((a, b) => a.en.localeCompare(b.en));
 words.sort((a, b) => a.en.localeCompare(b.en));
 
 // Convert words array to CSV format
-const csv = words.map(word => Object.values(word).join(',')).join('\n');
+const csv = words.map(word => {
+    // Object.values(word)
+    const arr = [word.en, word.cn , word.ph, word.type];
+    return arr.join(',')
+}).join('\n');
 
 // Write CSV to a file
-fs.writeFile('output.csv', csv, (err) => {
+fs.writeFile('word8000-sorted.csv', csv, (err) => {
     if (err) throw err;
     console.log('CSV file has been saved!');
 });
