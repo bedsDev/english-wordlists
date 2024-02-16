@@ -7744,6 +7744,12 @@ var words = [{"en":"abandon","ph":"[ə'bændən]","type":"v.","cn":"放弃；放
 {"en":"zoom","ph":"[zu:m]","type":"v.","cn":"急速上升"},
 ];
 
+words.forEach(word => {
+    word.en = word.en.replace(/,/g, 'ˌ');
+    word.ph = word.ph.replace(/,/g, 'ˌ');
+    word.type = word.type.replace(/,/g, 'ˌ');
+    word.cn = word.cn.replace(/,/g, 'ˌ');
+})
 words.sort((a, b) => a.en.localeCompare(b.en));
 
 
