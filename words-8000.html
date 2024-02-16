@@ -20,6 +20,7 @@
 
         .word-list td {
             border: 1px solid #ccc;
+            padding: 0 10px;
 
             /* max-width: 100%;
             white-space: nowrap; */
@@ -58,17 +59,23 @@
         // console.log(words);
         let wordList = document.getElementById('wordList');
         let content = '';
-        for (let i = 0; i < words.length; i++) {
+        const sortedWords = words.sort((a, b) => {
+            return a.en.localeCompare(b.en);
+            // return true
+        });
+        for (let i = 0; i < sortedWords.length; i++) {
             const line = `<tr>
-                <td class="word">${words[i].en}</td>
-                <td class="phonetic">${words[i].ph}</td>
-                <td class="type">${words[i].type}</td>
+                <td class="seq">${i + 1}</td>
+                <td class="word">${sortedWords[i].en}</td>
+                <td class="phonetic">${sortedWords[i].ph}</td>
+                <td class="type">${sortedWords[i].type}</td>
                 <td class="cn hiding" onclick="toggleHide(this)">
                     <span class="arrow">>></span>
-                    <span class="cn-word">${words[i].cn}</span>
+                    <span class="cn-word">${sortedWords[i].cn}</span>
                 </td>
                 <td class="dictionary" >
-                    <a href="http://www.wordcyclopedia.com/english?${words[i].en}" target="_blank">Dictionary</a>
+                    <a href="https://www.oxfordlearnersdictionaries.com/definition/english/${sortedWords[i].en}" target="_blank">Dictionary</a>
+                 <!-- a href="http://www.wordcyclopedia.com/english?${sortedWords[i].en}" target="_blank">Dictionary</a -->
                 </td>
                 </tr>
 

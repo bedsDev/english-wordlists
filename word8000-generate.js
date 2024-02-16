@@ -1,3 +1,4 @@
+const fs = require('fs');
 var words = [{"en":"abandon","ph":"[ə'bændən]","type":"v.","cn":"放弃；放纵"},
 {"en":"abash","ph":"[ə'bæʃ]","type":"v.","cn":"使害羞，使尴尬"},
 {"en":"abate","ph":"[ə'beit]","type":"v.","cn":"减轻，减少"},
@@ -7741,4 +7742,19 @@ var words = [{"en":"abandon","ph":"[ə'bændən]","type":"v.","cn":"放弃；放
 {"en":"yummy","ph":"['jʌmi]","type":"a.","cn":"美味的，可口的"},
 {"en":"zany","ph":"['zeini]","type":"a.","cn":"荒唐可笑的；像小丑的"},
 {"en":"zoom","ph":"[zu:m]","type":"v.","cn":"急速上升"},
-]
+];
+
+words.sort((a, b) => a.en.localeCompare(b.en));
+
+
+words.sort((a, b) => a.en.localeCompare(b.en));
+
+// Convert words array to CSV format
+const csv = words.map(word => Object.values(word).join(',')).join('\n');
+
+// Write CSV to a file
+fs.writeFile('output.csv', csv, (err) => {
+    if (err) throw err;
+    console.log('CSV file has been saved!');
+});
+
