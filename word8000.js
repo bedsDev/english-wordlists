@@ -6196,7 +6196,7 @@ var words = [{"en":"abandon","ph":"[ə'bændən]","type":"v.","cn":"放弃；放
 {"en":"aboriginal","ph":"[,æbə'ridʒənəl]","type":"n.","cn":"原始居民，土著"},
 {"en":"abortive","ph":"[ə'bɔ:tiv]","type":"a.","cn":"无结果的，失败的"},
 {"en":"abound","ph":"[ə'baund]","type":"v.","cn":"充满; 富于"},
-{"en":"abrupt","ph":"[ə'brʌpt]","type":"","cn":"abrupt [ə'brʌpt] a突然的，意外的；唐突的"},
+{"en":"abrupt","ph":"[ə'brʌpt]","type":"a","cn":"突然的，意外的；唐突的"},
 {"en":"abstinent","ph":"['æbstinənt]","type":"a.","cn":"饮食有度的，有节制的，禁欲的"},
 {"en":"acarpous","ph":"[ei'kɑ:pəs]","type":"a.","cn":"不结果实的"},
 {"en":"acerbity","ph":"[ə'sə:biti]","type":"n.","cn":"涩，酸，刻薄"},
