@@ -21,7 +21,7 @@ words.sort((a, b) => a.en.localeCompare(b.en));
 
 words.sort((a, b) => a.en.localeCompare(b.en));
 const totalWords = words.length;
-const setp = 200;
+const setp = 100;
 
 for (let i = 0; i < totalWords; i += setp) {
     const filename = `word8000-sorted-${i.toString().padStart(4, '0')}.csv`;
