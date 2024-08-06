@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./word8000.js"></script>
+    <script src="./w1100words.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        padding: 0 60px 0 60px;
+      }
+      .word-list {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+
+        /* Add this line */
+      }
+
+      .word-list td {
+        border: 1px solid #ccc;
+        padding: 0 10px;
+
+        /* max-width: 100%;
+            white-space: nowrap; */
+        /* width: 0.1%;
+            white-space: nowrap; */
+      }
+
+      .word-list tr td.word {
+        font-size: 40px;
+        font-weight: 300;
+        padding-left: 10px;
+        letter-spacing: 0.5px;
+      }
+
+      .word-list tr td.dictionary {
+        width: 100%;
+      }
+      .word-list tr td.cn {
+        min-width: 200px;
+        cursor: pointer;
+      }
+
+      .word-list tr td.cn.hiding .cn-word {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Words 8000</h1>
+    <table id="wordList" class="word-list"></table>
+    <script>
+      // console.log(words);
+      let wordList = document.getElementById("wordList");
+      let content = "";
+      const sortedWords = words.sort((a, b) => {
+        return a.en.localeCompare(b.en);
+        // return true
+      });
+      // for (let i = 0; i < sortedWords.length; i++) {
+      for (let i = 0; i < 10; i++) {
+        const line = `<tr>
+                <td class="seq">${i + 1}</td>
+                <td class="word">${sortedWords[i].en}</td>
+                <td class="phonetic">${sortedWords[i].ph}</td>
+                <td class="type">${sortedWords[i].type}</td>
+                <td class="cn hiding" onclick="toggleHide(this)">
+                    <span class="arrow">>></span>
+                    <span class="cn-word">${sortedWords[i].cn}</span>
+                </td>
+                <td class="dictionary" >
+                    <a href="https://www.oxfordlearnersdictionaries.com/definition/english/${
+                      sortedWords[i].en
+                    }" target="_blank">Dictionary</a>
+                 <!-- a href="http://www.wordcyclopedia.com/english?${
+                   sortedWords[i].en
+                 }" target="_blank">Dictionary</a -->
+                </td>
+                </tr>
+
+                `;
+        content += line;
+        // let li = document.createElement('tr');
+        // // let word = words[i];
+        // let liWord = document.createElement('td');
+        // liWord.innerHTML = words[i].en;
+        // liWord.classList.add('word'); // Add your desired class name here
+        // li.appendChild(liWord);
+
+        // liWord = document.createElement('td');
+        // liWord.innerHTML = words[i].ph;
+        // liWord.classList.add('phonetic'); // Add your desired class name here
+        // li.appendChild(liWord);
+        // liWord = document.createElement('td');
+        // liWord.innerHTML = words[i].type;
+        // liWord.classList.add('type'); // Add your desired class name here
+        // li.appendChild(liWord);
+
+        // liWord = document.createElement('td');
+        // const arroww = document.createElement('span');
+        // arroww.innerHTML = '>>';
+        // liWord.appendChild(arroww);
+        // arroww.classList.add('arrow'); // Add your desired class name here
+        // const cn = document.createElement('span');
+        // cn.innerHTML = `<span class="cn-word">${words[i].cn}</span>`;
+        // liWord.appendChild(cn);
+        // arroww.classList.add('chinese'); // Add your desired class name here
+        // liWord.classList.add('hiding'); // Add your desired class name here
+        // liWord.classList.add('cn'); // Add your desired class name here
+        // // liWord.classList.add('hiding'); // Add your desired class name here
+        // liWord.addEventListener('click', function () {
+        //     this.classList.toggle('hiding');
+        // });
+
+        // // Assuming you have an element with id "myElement"
+        // // let element = document.getElementById("myElement");
+
+        // // Remove the CSS class "myClass" from the element
+        // // element.classList.remove("myClass");
+
+        // li.appendChild(liWord);
+        // // li.innerHTML = JSON.stringify(words[i]);
+        // wordList.appendChild(li);
+      }
+
+      wordList.innerHTML = content;
+
+      function toggleHide(element) {
+        element.classList.toggle("hiding");
+      }
+    </script>
+
+    <script>
+      var matchedWords = words.filter((word) => {
+        const w = word.en;
+        return words1100.indexOf(w) != -1;
+      });
+
+      // words1100
+
+      var missedWords = words1100.filter((w) => {
+        return (
+          words.findIndex((ww) => {
+            return ww.en.toLowerCase() == w.toLowerCase();
+          }) == -1
+        );
+      });
+
+      // missedWords
+      // console.log(JSON.stringify(missedWords))
+      // missedWords.forEach((e)=>{
+      //     console.log(e)
+      // })
+
+      matchedWords.forEach((e) => {
+        console.log(e.en, "`", e.ph, "`", e.type, "`", e.cn);
+      });
+    </script>
+  </body>
+</html>
