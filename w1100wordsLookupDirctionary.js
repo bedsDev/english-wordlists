@@ -210,10 +210,10 @@ const words1100 = [
 ];
 
 
-const url = 'https://www.oxfordlearnersdictionaries.com/definition/english/amorous?q=amorous';
+const urlPre = 'dictionary.com/browse/';
 
 function lookupWord(word) {
-    const url = 'https://www.oxfordlearnersdictionaries.com/definition/english/' + word + '?q=' + word;
+    const url = urlPre + word + '?q=' + word;
     https.get(url, (response) => {
         let data = '';
 
